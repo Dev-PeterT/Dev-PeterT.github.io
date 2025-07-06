@@ -1,0 +1,183 @@
+/* =======================
+   Navigation Bar Styling
+   ======================= */
+#navbar {
+	top: 0;
+	margin: 0;
+	height: 70px;
+	padding: 0 10%;
+	box-sizing: border-box;
+	width: 100%;
+	z-index: 1000;
+	display: flex;
+	font-size: 24px;
+	position: fixed;
+	align-items: center;
+	background-color: #202020;
+	justify-content: space-between;
+}
+
+/* =======================
+   Navigation Items (Desktop)
+   ======================= */
+.navItems {
+	display: flex;
+	align-items: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Each individual navigation item */
+.navItems li {
+	position: relative;
+}
+
+/* Navigation links (unstyled and styled) */
+.navItems li a {
+	color: white;
+	text-decoration: none;
+	padding: 16px 20px;
+	display: block;
+	position: relative;
+}
+
+/* Active nav link styling */
+.navItems li a.active {
+	color: #0077ff;
+}
+
+.navItems li a.active::after {
+	transform: translateX(-50%) scaleX(1);
+	background-color: #0077ff;
+}
+
+/* Underline animation effect on hover */
+.navItems li a::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%) scaleX(0);
+	transform-origin: center;
+	bottom: 10px;
+	width: 100%;
+	height: 3px;
+	background-color: white;
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover state for nav links */
+.navItems li a:hover {
+	color: #0077ff;
+}
+
+.navItems li a:hover::after {
+	transform: translateX(-50%) scaleX(1);
+	background-color: #0077ff;
+}
+
+/* =======================
+   Branding (Logo/Name)
+   ======================= */
+.brand {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 32px;
+	position: relative;
+	display: inline-block;
+	z-index: 2;
+}
+
+/* Underline animation on hover for Brand */
+.brand::after {
+	content: '';
+	position: absolute;
+	left: -10%;
+	width: 120%;
+	height: 3px;
+	bottom: -5px;
+	background-color: white;
+	transform: scaleX(0);
+	transform-origin: center;
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.brand:hover {
+	color: #0077ff;
+}
+
+.brand:hover::after {
+	transform: scaleX(1);
+	background-color: #0077ff;
+}
+
+/* =======================
+   Hamburger Menu (Mobile)
+   ======================= */
+.hamburger {
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.hamburger div {
+	width: 25px;
+	height: 3px;
+	background-color: white;
+	margin: 5px;
+	transition: all 0.3s ease;
+}
+
+/* =======================
+   Responsive (Mobile View)
+   ======================= */
+@media (max-width: 1600px) {
+    .brand {
+        font-size: 20px;
+    }
+    .navItems {
+	    font-size: 20px;
+    }
+}
+@media (max-width: 800px) {
+	.brand {
+		font-size: 16px;
+	}
+
+	/* Show hamburger icon in mobile view */
+	.hamburger {
+		display: flex;
+		z-index: 3;
+	}
+
+	/* Nav items stack vertically in mobile */
+	.navItems {
+		flex-direction: column;
+		width: 100%;
+		background-color: #252525;
+		position: absolute;
+		top: 70px;
+		left: 0;
+		overflow: hidden;
+		max-height: 0;
+		opacity: 0;
+		transform: translateY(-10px);
+		transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+		pointer-events: none;
+	}
+
+	/* Mobile menu active (open) state */
+	.navItems.active {
+		max-height: 500px;
+		opacity: 1;
+		transform: translateY(0);
+		pointer-events: auto;
+	}
+
+	/* Center text and full-width menu items */
+	.navItems li {
+		text-align: center;
+		width: 100%;
+	}
+}
