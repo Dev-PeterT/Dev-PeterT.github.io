@@ -1,6 +1,22 @@
 [
   {
-    "Project_ID": "1",
-    "ProjectTitle": "Unity DevKit"
+    "ID": "1",
+    "Title": "Unity DevKit",
+
+    "Role": "Sole Developer",
+    "TeamSize": "1",
+    "DevelopmentTime": "2 months (Casual)",
+    "Engine": "Unity",
+    "Language": "C#",
+
+    "Platform": "Android",
+    "Genre": "Casual",
+    "Perspective": "2D",
+    "Status": "In Development",
+
+    "Concept": "",
+    "SuperClass": "",
+    "CodePath": "",
+    "Recap": "TBD"
   }
 ]

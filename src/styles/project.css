@@ -1,0 +1,216 @@
+/*  ===============
+	General Webpage 
+	=============== */
+html {
+	scroll-behavior: smooth;
+}
+body {
+	margin: 0;
+	color: white;
+	hyphens: auto;
+	text-align: center;
+	align-items: center;
+	word-spacing: 0.01em;
+	letter-spacing: normal;
+	justify-content: center;
+	background-color: #353535;
+	font-family: Verdana, sans-serif;
+}
+
+/*  =================
+	Main Body Content
+	================= */
+.mainBodyContent {
+	padding: 0 30%;
+}
+
+/*  ==========
+	Video Demo
+	========== */
+.videoWrapper {
+	margin: 0 auto;
+	position: relative;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.videoDemo {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.projectTitle {
+	bottom: 0;
+	width: 100%;
+	position: absolute;
+	color: #0066ff;
+
+	gap: 1.5rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	padding: 10px 0px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: rgba(0, 0, 0, 0.6);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.projectTitle hr {
+	flex: 1;
+	border: none;
+	height: 2px;
+	border-radius: 10px;
+	background-color: #0066ff;
+}
+
+/*  ================
+	Project Info Box
+	================ */
+.projectInfoContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 2rem;
+	margin-top: 10px;
+}
+.projectInfoBox {
+	flex: 1;
+	max-width: 800px;
+	padding: 5px 25px;
+	border-radius: 10px;
+	background-color: #454545;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+	color: #fff;
+	font-size: 1rem;
+	text-align: left;
+}
+.infoHeader {
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #9a4dff;
+}
+.infoItem {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.icons {
+	width: 45px;
+	height: 45px;
+	margin-right: 10px;
+	flex-shrink: 0;
+}
+.infoItem p {
+	white-space: nowrap;
+	margin: 0;
+	font-size: 1.25rem;
+	padding-bottom: 7px;
+}
+
+/*  ==================
+	Divider and Header
+	================== */
+.divider {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	color: #0066ff;
+	font-size: 27px;
+	padding-bottom: 10px;
+	justify-content: flex-start;
+}
+.divider hr {
+	flex: 1;
+	border: none;
+	height: 2px;
+	border-radius: 10px;
+	background-color: #0066ff;
+}
+
+/*  ============ 
+	Text Section 
+	============ */
+.projectDetails {
+	padding-top: 20px;
+	padding-bottom: 60px;
+
+	line-height: 1.5em;
+	text-align: justify;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+/*  ====================
+	Super Class Showcase 
+	==================== */
+.codeWindow {
+	background-color: #1e1e1e;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+	width: 100%;
+	margin: auto;
+}
+.codeHeader {
+	background-color: #252525;
+	padding: 0.75rem 1rem;
+	font-size: 1rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+}
+.ToggleBtn {
+	background: none;
+	border: none;
+	color: #9a4dff;
+	font-size: 1rem;
+	cursor: pointer;
+}
+.codeContent {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease;
+}
+.codeContent.expanded {
+	max-height: 1000px;
+	overflow: auto;
+	margin:1rem;
+}
+pre {
+	margin: 0;
+	white-space: pre;
+}
+
+/*  ============== 
+	Footer Section 
+	============== */
+.footer {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #202020;
+}
+
+/*  ==================== 
+	Responsive Portfolio 
+	==================== */
+@media screen and (max-width: 800px) {
+	.mainBodyContent {
+		padding: 0 0;
+	}
+	.projectInfoContainer {
+		flex-direction: column;
+		gap: 1rem;
+	}
+	.projectInfoBox {
+		max-width: 100%;
+	}
+}
