@@ -17,6 +17,20 @@ body {
 	font-family: Verdana, sans-serif;
 }
 
+/*  ======================
+	Page Content Animation
+	====================== */
+.pageContent {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.body-animate-in .pageContent {
+  opacity: 1;
+}
+.body-animate-out .pageContent {
+  opacity: 0;
+}
+
 /*  =================
 	Main Body Content
 	================= */

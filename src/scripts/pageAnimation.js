@@ -13,11 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Skip anchor links, mailto, tel, or target=_blank
     if (
-      href.startsWith('#') ||
-      href.startsWith('mailto:') ||
-      href.startsWith('tel:') ||
-      link.target === '_blank'
+        href.startsWith('mailto:') ||
+        href.startsWith('tel:') ||
+        link.target === '_blank'
     ) return;
+
+    // Treat anchor-only links on *same page* as instant (no animation)
+    if (href.startsWith('#') && link.pathname === window.location.pathname) {
+        return;
+    }
 
     // External links (not same origin) → skip animation
     if (link.hostname !== window.location.hostname) return;
