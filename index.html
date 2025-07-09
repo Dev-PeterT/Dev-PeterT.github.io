@@ -8,6 +8,7 @@
 
 		<link rel="styleSheet" href="src/styles/index.css">
 		<link rel="styleSheet" href="src/styles/navbar.css">
+		
     </head>
     <body>
 
@@ -32,77 +33,80 @@
 		</nav>
 		<script src="src/scripts/navbar.js"></script>
 
-		<div class="splashBanner">
-			<img src="public/images/SplashBanner2.jpeg" alt="Splash Banner" class="bannerImage">
-		</div>
+		<div class="pageContent">
+			<div class="splashBanner">
+				<img src="public/images/SplashBanner2.jpeg" alt="Splash Banner" class="bannerImage">
+			</div>
 
-		<div style="height: 50px"></div>
+			<div style="height: 50px"></div>
 
-		<div class="mainBodyContent">
-			<!-- Introudction Section -->
-			<div class="introudctionSection" id="about">
-				<div class="divider">
-					<hr><span>About Me</span><hr>
-				</div>
-
-				<div class="aboutContent">
-					<div class="aboutPhoto">
-						<img src="public/images/Profile.jpeg" alt="Profile Image" class="profile">
+			<div class="mainBodyContent">
+				<!-- Introudction Section -->
+				<div class="introudctionSection" id="about">
+					<div class="divider">
+						<hr><span>About Me</span><hr>
 					</div>
-					<div class="aboutContent-Text">
-						<h2>
-							Hi! I'm Peter
-						</h2>
-						<p>
-							I am a software developer and game programmer based in Canada. My passion for game development began early, sparked by modding a childhood game, that introduced me to the world of programming. I’ve since continued to grow my skills through formal education, studying Game Programming at Humber College and Information Technology at York University.
-							<br><br>
-							I enjoy participating in game jams, as they are instrumental in honing my skills in time management, project scoping, and team coordination within fast-paced development cycles. These experiences have also provided valuable opportunities to collaborate with others and continuously expand my technical and creative skill set.
-							<br><br>
-							Here, you’ll find some of the projects I’ve worked on, each reflecting my dedication to creating engaging and meaningful interactive experiences.
-						</p>
+
+					<div class="aboutContent">
+						<div class="aboutPhoto">
+							<img src="public/images/Profile.jpeg" alt="Profile Image" class="profile">
+						</div>
+						<div class="aboutContent-Text">
+							<h2>
+								Hi! I'm Peter
+							</h2>
+							<p>
+								I am a software developer and game programmer based in Canada. My passion for game development began early, sparked by modding a childhood game, that introduced me to the world of programming. I’ve since continued to grow my skills through formal education, studying Game Programming at Humber College and Information Technology at York University.
+								<br><br>
+								I enjoy participating in game jams, as they are instrumental in honing my skills in time management, project scoping, and team coordination within fast-paced development cycles. These experiences have also provided valuable opportunities to collaborate with others and continuously expand my technical and creative skill set.
+								<br><br>
+								Here, you’ll find some of the projects I’ve worked on, each reflecting my dedication to creating engaging and meaningful interactive experiences.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div style="height: 150px"></div>
+
+				<!-- Projects Section -->
+				<div class="projectSection" id="projects">
+					<div class="divider">
+						<hr><span>Featured Projects</span><hr>
+					</div>
+					<div class="projectsContent" id="projectsContent">
+						<!-- Auto Populate Projects -->
+						<script src="src/scripts/indexProjectsPopulator.js"></script>
 					</div>
 				</div>
 			</div>
 
-			<div style="height: 150px"></div>
+			<div style="height: 100px"></div>
 
-			<!-- Projects Section -->
-			<div class="projectSection" id="projects">
-				<div class="divider">
-					<hr><span>Featured Projects</span><hr>
+			<!-- Fade Effect -->
+			<div class="contactFade"></div>
+			
+			<!-- Contact Section -->
+			<div class="contactSection" id="contact">
+				<div class="invertedDivider">
+					<hr><span>Contact Me</span><hr>
 				</div>
-				<div class="projectsContent" id="projectsContent">
-					<!-- Auto Populate Projects -->
-					<script src="src/scripts/indexProjectsPopulator.js"></script>
-				</div>
-			</div>
-		</div>
 
-		<div style="height: 100px"></div>
+				<p>
+					You're welcome to reach out anytime at my <a href="mailto:dev.petertran@gmail.com" class="emailIcon"><i class="fa fa-envelope"></i></a> — I will do my best to respond promptly.
+					<br>
+					Prefer social? I'm also active on various platforms — feel free to connect there if that's more convenient.
+				</p>
 
-        <!-- Fade Effect -->
-		<div class="contactFade"></div>
-        
-        <!-- Contact Section -->
-		<div class="contactSection" id="contact">
-			<div class="invertedDivider">
-				<hr><span>Contact Me</span><hr>
+				<a href="https://www.linkedin.com/in/petertran00/" id="linkedin"></a>
+				<a href="https://github.com/Dev-PeterT" id="github"></a>
+				<a href="https://x.com/Dev_PeterT" id="twitter"></a>
 			</div>
 
-			<p>
-				You're welcome to reach out anytime at my <a href="mailto:dev.petertran@gmail.com" class="emailIcon"><i class="fa fa-envelope"></i></a> — I will do my best to respond promptly.
-				<br>
-				Prefer social? I'm also active on various platforms — feel free to connect there if that's more convenient.
-			</p>
-
-			<a href="https://www.linkedin.com/in/petertran00/" id="linkedin"></a>
-			<a href="https://github.com/Dev-PeterTran" id="github"></a>
-            <a href="https://x.com/Dev_PeterT" id="twitter"></a>
+			<!-- Footer Section-->
+			<div class="footer">
+				<p>Copyright &copy; by Peter Tran | All images, logos are used with permission.</p>
+			</div>
 		</div>
-
-		<!-- Footer Section-->
-		<div class="footer">
-			<p>Copyright &copy; by Peter Tran | All images, logos are used with permission.</p>
-		</div>
+		<script src="src/scripts/pageAnimation.js"></script>
     </body>
 </html>

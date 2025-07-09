@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Loop through each project in the JSON array
       projects.forEach(project => {
         const a = document.createElement('a');
-        a.href = `/src/pages/project.html?id=${project.ID}`;
+        a.href = `/src/pages/gameProject.html?id=${project.ID}`;
         a.className = 'projectContainer';
         a.innerHTML = `
           <div class="projectVideo">
@@ -40,6 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
           const navbar = document.getElementById('navbar');
           navbar.classList.remove("nav-animate-in");
           navbar.classList.add("nav-animate-out");
+
+          // Animate out page content
+          const pageContent = document.querySelector('.pageContent');
+          if (pageContent) {
+            document.body.classList.remove("body-animate-in");
+            document.body.classList.add("body-animate-out");
+          }
 
           setTimeout(() => {
             window.location.href = a.href;

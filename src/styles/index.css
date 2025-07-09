@@ -20,6 +20,23 @@ body {
 	font-family: Verdana, sans-serif;
 }
 
+/*  ======================
+	Page Content Animation
+	====================== */
+.pageContent {
+  transform: translateX(100px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+.body-animate-in .pageContent {
+  transform: translateX(0);
+  opacity: 1;
+}
+.body-animate-out .pageContent {
+  transform: translateX(200px);
+  opacity: 0;
+}
+
 /*  =================
 	Main Body Content
 	================= */
