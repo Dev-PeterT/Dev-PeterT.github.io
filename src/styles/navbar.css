@@ -112,6 +112,25 @@
 	background-color: #0077ff;
 }
 
+/* Initial off-screen state */
+.rightNavItem {
+	transform: translateX(100px);
+	opacity: 0;
+	transition: transform 1s ease, opacity 1s ease;
+}
+
+/* Animate in */
+.nav-animate-in .rightNavItem {
+	transform: translateX(0);
+	opacity: 1;
+}
+
+/* Animate out */
+.nav-animate-out .rightNavItem {
+	transform: translateX(200px);
+	opacity: 0;
+}
+
 /* =======================
    Hamburger Menu (Mobile)
    ======================= */

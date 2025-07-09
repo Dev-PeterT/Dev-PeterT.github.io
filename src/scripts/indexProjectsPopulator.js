@@ -21,16 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Loop through each project in the JSON array
       projects.forEach(project => {
-        // Create an anchor element to wrap the project display
         const a = document.createElement('a');
-
-        // Link to project detail page with query param
         a.href = `/src/pages/project.html?id=${project.ID}`;
-
-        // Apply styling class
         a.className = 'projectContainer';
-
-        // Set the inner HTML of the anchor element to include video and text
         a.innerHTML = `
           <div class="projectVideo">
             <video></video>
@@ -41,7 +34,18 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         `;
 
-        // Append the anchor (project card) to the container
+        // Add click listener to animate out navbar before navigation
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          const navbar = document.getElementById('navbar');
+          navbar.classList.remove("nav-animate-in");
+          navbar.classList.add("nav-animate-out");
+
+          setTimeout(() => {
+            window.location.href = a.href;
+          }, 300); // Match animation duration
+        });
+
         container.appendChild(a);
       });
     })

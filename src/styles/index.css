@@ -234,24 +234,24 @@ img.profile {
 
 /* Default background images */
 #linkedin {
-  background-image: url('/public/images/logos/Linkedin_Logo.png');
+  background-image: url('/public/images/Logos/Linkedin_Logo.png');
 }
 #github {
-  background-image: url('/public/images/logos/Github_Logo.png');
+  background-image: url('/public/images/Logos/Github_Logo.png');
 }
 #twitter {
-  background-image: url('/public/images/logos/Twitter_Logo.png');
+  background-image: url('/public/images/Logos/Twitter_Logo.png');
 }
 
 /* Hover effect */
 #linkedin:hover {
-  background-image: url('/public/images/logos/Linkedin_Logo2.png');
+  background-image: url('/public/images/Logos/Linkedin_Logo2.png');
 }
 #github:hover {
-  background-image: url('/public/images/logos/Github_Logo2.png');
+  background-image: url('/public/images/Logos/Github_Logo2.png');
 }
 #twitter:hover {
-  background-image: url('/public/images/logos/Twitter_Logo2.png');
+  background-image: url('/public/images/Logos/Twitter_Logo2.png');
 }
 
 /*  ============== 
