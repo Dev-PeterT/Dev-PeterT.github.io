@@ -3,9 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.getElementById("navbar");
   const navItems = document.querySelectorAll(".rightNavItem");
 
-  // Animate nav items in on load
-  navbar.classList.add("nav-animate-in");
+   // Remove classes in case they're left over (reset state)
+  navbar.classList.remove("nav-animate-in", "nav-animate-out");
 
+  // Delay adding the class to next animation frame
+  requestAnimationFrame(() => {
+    navbar.classList.add("nav-animate-in");
+  });
+  
   // Intercept link clicks to animate out
   document.querySelectorAll('.navItems a').forEach(link => {
     link.addEventListener('click', (e) => {

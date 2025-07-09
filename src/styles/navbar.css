@@ -116,7 +116,7 @@
 .rightNavItem {
 	transform: translateX(100px);
 	opacity: 0;
-	transition: transform 1s ease, opacity 1s ease;
+	transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
 /* Animate in */
