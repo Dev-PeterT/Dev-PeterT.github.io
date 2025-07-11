@@ -24,6 +24,7 @@ body {
 	Page Content Animation
 	====================== */
 .pageContent {
+  will-change: opacity;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -85,13 +86,16 @@ body {
 
 .splashBanner {
     width: 100%;
+    height: 60vh; /* or a fixed height like 300px */
     overflow: hidden;
+    position: relative;
 }
+
 .bannerImage {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* Zooms/crops instead of squishing */
     display: block;
-    object-fit: cover;
 }
 
 /*  ====================
@@ -127,6 +131,9 @@ img.profile {
 	box-shadow: 0 0 10px rgba(0, 204, 255, 0.6);
 }
 @media screen and (max-width: 800px) {
+	.splashBanner {
+		height: 40vh; /* Adjust for smaller devices */
+	}
 	.aboutContent {
 		flex-direction: column;
 		text-align: center;

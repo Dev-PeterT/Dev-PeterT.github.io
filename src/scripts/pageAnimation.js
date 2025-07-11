@@ -41,6 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (pageContent) {
       document.body.classList.remove("body-animate-in");
       document.body.classList.add("body-animate-out");
+
+      const onTransitionEnd = () => {
+        pageContent.removeEventListener("transitionend", onTransitionEnd);
+        window.location.href = link.href;
+      };
+
+      pageContent.addEventListener("transitionend", onTransitionEnd);
     }
 
     // Navigate after animation completes

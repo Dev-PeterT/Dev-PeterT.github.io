@@ -21,6 +21,7 @@ body {
 	Page Content Animation
 	====================== */
 .pageContent {
+  will-change: opacity;
   opacity: 0;
   transition: opacity 0.5s ease;
 }

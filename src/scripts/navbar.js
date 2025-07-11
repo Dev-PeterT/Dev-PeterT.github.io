@@ -92,8 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (activeLink) activeLink.classList.add("active");
     },
     {
-      threshold: 0.5,
-      rootMargin: "0px 0px -40% 0px",
+      threshold: 0.4,
+      rootMargin: "-20% 0px -50% 0px", // TOP | RIGHT | BOTTOM | LEFT
     }
   );
 
