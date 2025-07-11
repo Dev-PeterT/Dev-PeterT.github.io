@@ -22,15 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
       // Loop through each project in the JSON array
       projects.forEach(project => {
         const a = document.createElement('a');
-        a.href = `/src/pages/gameProject.html?id=${project.ID}`;
+        a.href = `/src/pages/gameProject.html?id=${project.Project_ID}`;
         a.className = 'projectContainer';
         a.innerHTML = `
           <div class="projectVideo">
             <video></video>
           </div>
           <div class="projectText">
-            <h2>${project.ProjectTitle}<span class="projectArrow">&gt;</span></h2>
-            <p>Test</p>
+            <h2>${project.Project_Title}<span class="projectArrow">&gt;</span></h2>
+            <p>${project.Project_Pitch}</p>
           </div>
         `;
 

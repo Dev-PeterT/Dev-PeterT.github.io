@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function type() {
     const currentRole = roles[i % roles.length];
-    typingElement.innerHTML = currentRole.substring(0, j) + (j % 2 === 0 ? "|" : "");
+    typingElement.innerHTML = currentRole.substring(0, j) + '<span class="cursor">|</span>';
 
     localStorage.setItem("typingIndex", i);
     localStorage.setItem("typingCharIndex", j);
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(type, 150);
     } else if (!isDeleting && j === currentRole.length) {
       isDeleting = true;
-      setTimeout(type, 1500);
+      setTimeout(type, 2250);
     } else if (isDeleting && j === 0) {
       isDeleting = false;
       i++;

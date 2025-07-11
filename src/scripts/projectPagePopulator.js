@@ -14,7 +14,7 @@ if (!projectId) {
     .then(response => response.json())
     .then(projects => {
       // Find the project object with a matching ID
-      const project = projects.find(p => p.ID === projectId);
+      const project = projects.find(p => p.Project_ID === projectId);
       
       // If the project is not found, log an error and stop execution
       if (!project) {
@@ -23,26 +23,26 @@ if (!projectId) {
       }
 
       // Set the page title to the project's title
-      document.title = project.Title;
+      document.title = project.Project_Title;
 
-      const paragraphs = project.SuperClass.split('\n\n');
+      const paragraphs = project.Project_SuperClass.split('\n\n');
 
       // Populate elements
-      document.getElementById('projectTitle').textContent = project.Title;
+      document.getElementById('projectTitle').textContent = project.Project_Title;
 
-      document.getElementById('roleDetail').textContent = project.Role;
-      document.getElementById('sizeDetail').textContent = project.TeamSize;
-      document.getElementById('timeDetail').textContent = project.DevelopmentTime;
-      document.getElementById('engineDetail').textContent = project.Engine;
-      document.getElementById('languageDetail').textContent = project.Language;
+      document.getElementById('roleDetail').textContent = project.Project_Role;
+      document.getElementById('sizeDetail').textContent = project.Project_TeamSize;
+      document.getElementById('timeDetail').textContent = project.Project_DevelopmentTime;
+      document.getElementById('engineDetail').textContent = project.Project_Engine;
+      document.getElementById('languageDetail').textContent = project.Project_Language;
 
-      document.getElementById('platformDetail').textContent = project.Platform;
-      document.getElementById('genreDetail').textContent = project.Genre;
-      document.getElementById('perspectiveDetail').textContent = project.Perspective;
-      document.getElementById('statusDetail').textContent = project.Status;
+      document.getElementById('platformDetail').textContent = project.Project_Platform;
+      document.getElementById('genreDetail').textContent = project.Project_Genre;
+      document.getElementById('perspectiveDetail').textContent = project.Project_Perspective;
+      document.getElementById('statusDetail').textContent = project.Project_Status;
 
        // Change "Superclass Spotlight" to CodePath script filename
-      const codeFileName = project.CodePath.split('/').pop();
+      const codeFileName = project.Project_CodePath.split('/').pop();
       const codeHeader = document.querySelector(".CodeHeader");
       if (codeHeader && codeHeader.childNodes.length > 0) {
         codeHeader.childNodes[0].textContent = `${codeFileName} `;
