@@ -16,9 +16,17 @@
     "Project_Perspective": "2D",
     "Project_Status": "In Development",
 
-    "Project_Concept": "",
-    "Project_SuperClass": "",
+    "Project_ProjectContext": "TBD",
+
+    "Project_PrototypeContext": "TBD",
+    "Project_PrototypeVideoPath": "",
+
+    "Project_SuperClass": "TBD",
     "Project_CodePath": "",
-    "Project_Recap": "TBD"
+
+    "Project_FinalContext": "TBD",
+    "Project_FinalVideoPath": "",
+
+    "Project_RecapContext": "TBD"
   }
 ]

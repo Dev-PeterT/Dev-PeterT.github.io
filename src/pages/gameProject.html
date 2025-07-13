@@ -30,85 +30,59 @@
 		</nav>
 		<script src="../scripts/navbar.js"></script>
 
+		<div style="height: 200px;"></div>
+
 		<div class="pageContent">
 			<div class="mainBodyContent">
-				<div style="height: 90px;"></div>
+				<div>
 
-				<div class="projectWrapper">
-					<div class="videoWrapper">
-						<video id="projectVideo" src="#" class="videoDemo" autoplay muted loop></video>
-						<div class="projectTitle"><hr><span id="projectTitle">Project Title</span><hr></div>
-					</div>
-
-					<div class="projectInfoContainer">
-						<div class="projectInfoBox">
-							<p class="infoHeader">Project Info</p>
-							<div class="infoItem">
-								<img src="/public/images/Icons/Role.png" alt="Role" class="icons">
-								<p><span style="color: #9a4dff;">Role: </span><span id="roleDetail"></span></p>
-							</div>
-							<div class="infoItem">
-								<img src="/public/images/Icons/Team.png" alt="Team" class="icons">
-								<p><span style="color: #9a4dff;">Team Size: </span><span id="sizeDetail"></span></p>
-							</div>
-							<div class="infoItem">
-								<img src="/public/images/Icons/Time.png" alt="Time" class="icons">
-								<p><span style="color: #9a4dff;">Time Invested: </span><span id="timeDetail"></span></p>
-							</div>
-							<div class="infoItem">
-								<img src="/public/images/Icons/Engine.png" alt="Engine" class="icons">
-								<p><span style="color: #9a4dff;">Game Engine: </span><span id="engineDetail"></span></p>
-							</div>
-							<div class="infoItem">
-								<img src="/public/images/Icons/Language.png" alt="Language" class="icons">
-								<p><span style="color: #9a4dff;">Programming Language: </span><span id="languageDetail"></span></p>
-							</div>
-						</div>
-
-						<div class="projectInfoBox">
-							<p class="infoHeader">Game Info</p>
-							<div class="infoItem">
-								<img src="/public/images/Icons/Platform.png" alt="Polatform" class="icons">
-								<p><span style="color: #9a4dff;">Platform: </span><span id="platformDetail"></span></p>
-							</div>
-							<div class="infoItem">
-								<img src="/public/images/Icons/Genre.png" alt="Genre" class="icons">
-								<p><span style="color: #9a4dff;">Genre(s): </span><span id="genreDetail"></span></p>
-							</div>
-							<div class="infoItem">
-								<img src="/public/images/Icons/Perspective.png" alt="Perspective" class="icons">
-								<p><span style="color: #9a4dff;">Perspective: </span><span id="perspectiveDetail"></span></p>
-							</div>
-							<div class="infoItem">
-								<img src="/public/images/Icons/Status.png"  alt="Status" class="icons">
-								<p><span style="color: #9a4dff;">Status: </span><span id="statusDetail"></span></p>
-							</div>
-						</div>
-					</div>
 				</div>
 
-				<div style="height: 50px;"></div>
-
-				<!-- Game Concept -->
 				<div class="projectDetails">
 					<div class="divider">
-						<span>Game Concept</span>
+						<span>Game Concept & Overview</span>
 						<hr>
 					</div>
-					<p id="conceptDetail">
-						
+
+					<p id="projectContext">
+						Jibber Jabber
 					</p>
 				</div>
 
-				<!-- Superclass Spotlight -->
 				<div class="projectDetails">
 					<div class="divider">
-						<span>Superclass Spotlight</span>
+						<span>Prototype Preview</span>
 						<hr>
 					</div>
 
-					<p id="superClassDetail">
-						
+					<p id="prototypeContext">
+						Jibber Jabber
+					</p>
+
+					<div class="videoWindow">
+						<div class="videoHeader" onclick="toggleVideo(this)">
+							Prototype Preview
+							<button class="ToggleBtn">Show Video ▼</button>
+						</div>
+						<div class="videoContent" id="videoContent">
+							<div class="videoWrapper">
+								<video controls>
+									<source src=""/>
+									Your browser does not support the video tag.
+								</video>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="projectDetails">
+					<div class="divider">
+						<span>Technical Feature Spotlight</span>
+						<hr>
+					</div>
+
+					<p id="technicalCodeContext">
+						Jibber Jabber
 					</p>
 
 					<div class="codeWindow">
@@ -122,15 +96,40 @@
 					</div>
 				</div>
 
-				<!-- Project Recap -->
+				<div class="projectDetails">
+					<div class="divider">
+						<span>Final Game Showcase</span>
+						<hr>
+					</div>
+
+					<p id="finalShowcaseContext">
+						Jibber Jabber
+					</p>
+
+					<div class="videoWindow">
+						<div class="videoHeader" onclick="toggleVideo(this)">
+							Final Showcase
+							<button class="ToggleBtn">Show Video ▼</button>
+						</div>
+						<div class="videoContent" id="videoContent">
+							<div class="videoWrapper">
+								<video controls>
+									<source src=""/>
+									Your browser does not support the video tag.
+								</video>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<div class="projectDetails">
 					<div class="divider">
 						<span>Project Recap</span>
 						<hr>
 					</div>
 
-					<p id="recapDetail">
-						
+					<p id="recapContext">
+						Jibber Jabber
 					</p>
 				</div>
 			</div>	
