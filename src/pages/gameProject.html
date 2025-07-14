@@ -30,109 +30,149 @@
 		</nav>
 		<script src="../scripts/navbar.js"></script>
 
-		<div style="height: 200px;"></div>
+		<div style="height: 100px;"></div>
 
 		<div class="pageContent">
-			<div class="mainBodyContent">
-				<div>
-
-				</div>
-
-				<div class="projectDetails">
-					<div class="divider">
-						<span>Game Concept & Overview</span>
-						<hr>
+			<div class="contentWrapper">
+				<div class="mainBodyContent">
+					<div class="gameLogo">
+						<img id="gameLogoImg" alt="Game Logo">
 					</div>
 
-					<p id="projectContext">
-						Jibber Jabber
-					</p>
-				</div>
-
-				<div class="projectDetails">
-					<div class="divider">
-						<span>Prototype Preview</span>
-						<hr>
-					</div>
-
-					<p id="prototypeContext">
-						Jibber Jabber
-					</p>
-
-					<div class="videoWindow">
-						<div class="videoHeader" onclick="toggleVideo(this)">
-							Prototype Preview
-							<button class="ToggleBtn">Show Video ▼</button>
+					<div class="projectDetails">
+						<div class="divider">
+							<span>Game Concept & Overview</span>
+							<hr>
 						</div>
-						<div class="videoContent" id="videoContent">
-							<div class="videoWrapper">
-								<video controls>
-									<source src=""/>
-									Your browser does not support the video tag.
-								</video>
+
+						<p id="projectContext">
+							Jibber Jabber
+						</p>
+
+						<div class="infoContainer">
+							<div class="infoGroup">
+								<div class="infoItem">
+									<img src="/public/images/Icons/Role.png" alt="Role" class="icons">
+									<p><span style="color: #9a4dff;">Role: </span><span id="roleDetail"></span></p>
+								</div>
+								<div class="infoItem">
+									<img src="/public/images/Icons/Team.png" alt="Team" class="icons">
+									<p><span style="color: #9a4dff;">Team Size: </span><span id="teamSizeDetail"></span></p>
+								</div>
+							</div>
+							<div class="infoGroup">
+								<div class="infoItem">
+									<img src="/public/images/Icons/Time.png" alt="Time" class="icons">
+									<p><span style="color: #9a4dff;">Dev Time: </span><span id="devTimeDetail"></span></p>
+								</div>
+								<div class="infoItem">
+									<img src="/public/images/Icons/Status.png" alt="Status" class="icons">
+									<p><span style="color: #9a4dff;">Status: </span><span id="statusDetail"></span></p>
+								</div>
+							</div>
+							<div class="infoGroup">
+								<div class="infoItem">
+									<img src="/public/images/Icons/Engine.png" alt="Engine" class="icons">
+									<p><span style="color: #9a4dff;">Engine: </span><span id="engineDetail"></span></p>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="projectDetails">
-					<div class="divider">
-						<span>Technical Feature Spotlight</span>
-						<hr>
-					</div>
-
-					<p id="technicalCodeContext">
-						Jibber Jabber
-					</p>
-
-					<div class="codeWindow">
-						<div class="codeHeader" onclick="toggleCode()">
-							Superclass Spotlight
-							<button class="ToggleBtn" id="toggleBtn">Show Code ▼</button>
+					<div class="projectDetails">
+						<div class="divider">
+							<span>Prototype Preview</span>
+							<hr>
 						</div>
-						<div class="codeContent" id="codeContent">
-							<pre><code id="codeBlock" class="language-csharp">// Loading...</code></pre>
-						</div>
-					</div>
-				</div>
 
-				<div class="projectDetails">
-					<div class="divider">
-						<span>Final Game Showcase</span>
-						<hr>
-					</div>
+						<p id="prototypeContext">
+							Jibber Jabber
+						</p>
 
-					<p id="finalShowcaseContext">
-						Jibber Jabber
-					</p>
-
-					<div class="videoWindow">
-						<div class="videoHeader" onclick="toggleVideo(this)">
-							Final Showcase
-							<button class="ToggleBtn">Show Video ▼</button>
-						</div>
-						<div class="videoContent" id="videoContent">
-							<div class="videoWrapper">
-								<video controls>
-									<source src=""/>
-									Your browser does not support the video tag.
-								</video>
+						<div class="videoWindow">
+							<div class="videoHeader" onclick="toggleVideo(this)">
+								Prototype Preview
+								<button class="ToggleBtn">Show Video ▼</button>
+							</div>
+							<div class="videoContent" id="videoContent">
+								<div class="videoWrapper">
+									<video controls>
+										<source src=""/>
+										Your browser does not support the video tag.
+									</video>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="projectDetails">
-					<div class="divider">
-						<span>Project Recap</span>
-						<hr>
+					<div class="projectDetails">
+						<div class="divider">
+							<span>Technical Feature Spotlight</span>
+							<hr>
+						</div>
+
+						<p id="technicalCodeContext">
+							Jibber Jabber
+						</p>
+
+						<div class="codeWindow">
+							<div class="codeHeader" onclick="toggleCode()">
+								Superclass Spotlight
+								<button class="ToggleBtn" id="toggleBtn">Show Code ▼</button>
+							</div>
+							<div class="codeContent" id="codeContent">
+								<pre><code id="codeBlock" class="language-csharp">// Loading...</code></pre>
+							</div>
+						</div>
 					</div>
 
-					<p id="recapContext">
-						Jibber Jabber
-					</p>
+					<div class="projectDetails">
+						<div class="divider">
+							<span>Final Game Showcase</span>
+							<hr>
+						</div>
+
+						<p id="finalShowcaseContext">
+							Jibber Jabber
+						</p>
+
+						<div class="videoWindow">
+							<div class="videoHeader" onclick="toggleVideo(this)">
+								Final Showcase
+								<button class="ToggleBtn">Show Video ▼</button>
+							</div>
+							<div class="videoContent" id="videoContent">
+								<div class="videoWrapper">
+									<video controls>
+										<source src=""/>
+										Your browser does not support the video tag.
+									</video>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="projectDetails">
+						<div class="divider">
+							<span>Project Recap</span>
+							<hr>
+						</div>
+
+						<p id="recapContext">
+							Jibber Jabber
+						</p>
+					</div>
 				</div>
-			</div>	
+
+				<!-- Floating side panel -->
+				<div class="floatingPanel">
+					<div class="panelLabel">Available On</div>
+					<div class="platformIcons" id="platformIcons"></div>
+				</div>
+			</div>
+
+			<div style="height: 50px;"></div>
+
 			<!-- Footer Section-->
 			<div class="footer">
 				<p>Copyright &copy; by Peter Tran | All images, logos are used with permission.</p>

@@ -1,4 +1,3 @@
-// Wait for the DOM to be fully loaded before executing the script
 document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const projectId = params.get('id');
@@ -17,42 +16,41 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      /*
       document.title = project.Project_Title;
-      document.getElementById('projectTitle').textContent = project.Project_Title;
+
+      const logoImg = document.getElementById('gameLogoImg');
+      if (project.Project_IconPath && logoImg) {
+        logoImg.src = project.Project_IconPath;
+        logoImg.alt = `${project.Project_Title} Logo`;
+      }
 
       // Game Info Details
       document.getElementById('roleDetail').textContent = project.Project_Role;
-      document.getElementById('sizeDetail').textContent = project.Project_TeamSize;
-      document.getElementById('timeDetail').textContent = project.Project_DevelopmentTime;
+      document.getElementById('teamSizeDetail').textContent = project.Project_TeamSize;
+      document.getElementById('devTimeDetail').textContent = project.Project_DevelopmentTime;
       document.getElementById('engineDetail').textContent = project.Project_Engine;
-      document.getElementById('languageDetail').textContent = project.Project_Language;
-      document.getElementById('platformDetail').textContent = project.Project_Platform;
-      document.getElementById('genreDetail').textContent = project.Project_Genre;
-      document.getElementById('perspectiveDetail').textContent = project.Project_Perspective;
       document.getElementById('statusDetail').textContent = project.Project_Status;
-      */
 
-      // Populate concept & overview section
+      // Concept & Overview
       document.getElementById('projectContext').textContent = project.Project_ProjectContext;
 
-      // Populate prototype section
+      // Prototype section
       document.getElementById('prototypeContext').textContent = project.Project_PrototypeContext;
-      const prototypeVideo = document.querySelectorAll('video')[0]; // First video
+      const prototypeVideo = document.querySelectorAll('video')[0];
       if (prototypeVideo && project.Project_PrototypeVideoPath) {
         prototypeVideo.querySelector('source').src = project.Project_PrototypeVideoPath;
         prototypeVideo.load();
       }
 
-      // Populate final showcase section
+      // Final showcase section
       document.getElementById('finalShowcaseContext').textContent = project.Project_FinalContext;
-      const finalVideo = document.querySelectorAll('video')[1]; // Second video
+      const finalVideo = document.querySelectorAll('video')[1];
       if (finalVideo && project.Project_FinalVideoPath) {
         finalVideo.querySelector('source').src = project.Project_FinalVideoPath;
         finalVideo.load();
       }
 
-      // Populate technical feature / superclass code
+      // Superclass code block
       const codeFileName = project.Project_CodePath?.split('/').pop() || "Code Sample";
       const codeHeader = document.querySelector(".codeHeader");
       if (codeHeader && codeHeader.childNodes.length > 0) {
@@ -73,18 +71,36 @@ document.addEventListener('DOMContentLoaded', () => {
           codeBlock.textContent = "// Failed to load code: " + error.message;
         });
 
-      // Populate code context (optional if you use this)
+      // Technical context
       if (document.getElementById('technicalCodeContext') && project.Project_SuperClass) {
         document.getElementById('technicalCodeContext').textContent = project.Project_SuperClass;
       }
 
-      // Recap section
+      // Recap
       document.getElementById('recapContext').textContent = project.Project_RecapContext;
+
+      // === Platform Icons for Download Section ===
+      const platformContainer = document.getElementById('platformIcons');
+      if (platformContainer && project.Project_Availability?.length > 0) {
+        project.Project_Availability.forEach(platform => {
+          const link = document.createElement('a');
+          link.href = platform.Link;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+
+          const img = document.createElement('img');
+          img.src = `/public/images/Logos/${platform.Platform}.png`;
+          img.alt = platform.Platform;
+
+          link.appendChild(img);
+          platformContainer.appendChild(link);
+        });
+      }
     })
     .catch(error => console.error('Error loading project details:', error));
 });
 
-// Toggle button to show code
+// Toggle button to show/hide code
 let codeLoaded = false;
 function toggleCode() {
   const codeContent = document.getElementById("codeContent");

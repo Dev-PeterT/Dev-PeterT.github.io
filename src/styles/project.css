@@ -20,23 +20,37 @@ body {
 /*  =================
 	Main Body Content
 	================= */
+.contentWrapper {
+	position: relative;
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 0 1rem;
+	display: flex;
+	align-items: flex-start;
+	gap: 20px;  
+}
 .mainBodyContent {
-	padding: 0 30%;
+	flex: 1; 
+	max-width: 900px;
+	margin: 0 auto;
+	position: relative; 
+
+	left: calc((150px + 20px) / 2);
 }
 
 /*  ======================
 	Page Content Animation
 	====================== */
 .pageContent {
-  will-change: opacity;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+	will-change: opacity;
+	opacity: 0;
+	transition: opacity 0.5s ease;
 }
 .body-animate-in .pageContent {
-  opacity: 1;
+	opacity: 1;
 }
 .body-animate-out .pageContent {
-  opacity: 0;
+	opacity: 0;
 }
 
 
@@ -84,53 +98,6 @@ body {
 	background-color: #0066ff;
 }
 
-/*  ================
-	Project Info Box
-	================ */
-.projectInfoContainer {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	gap: 2rem;
-	margin-top: 10px;
-}
-.projectInfoBox {
-	flex: 1;
-	max-width: 800px;
-	padding: 5px 25px;
-	border-radius: 10px;
-	background-color: #454545;
-	box-shadow: 0 0 10px rgba(0,0,0,0.3);
-
-	color: #fff;
-	font-size: 1rem;
-	text-align: left;
-}
-.infoHeader {
-	text-align: center;
-	font-size: 1.2rem;
-	font-weight: bold;
-	margin-bottom: 10px;
-	color: #9a4dff;
-}
-.infoItem {
-	display: flex;
-	align-items: center;
-	margin-bottom: 10px;
-}
-.icons {
-	width: 45px;
-	height: 45px;
-	margin-right: 10px;
-	flex-shrink: 0;
-}
-.infoItem p {
-	white-space: nowrap;
-	margin: 0;
-	font-size: 1.25rem;
-	padding-bottom: 7px;
-}
-
 /*  ==================
 	Divider and Header
 	================== */
@@ -151,6 +118,86 @@ body {
 	background-color: #0066ff;
 }
 
+/*  ================
+	Project Info Box
+	================ */
+.floatingPanel {
+	position: sticky;
+	top: 150px;
+	left: calc(50% + 450px + 20px);
+	width: 150px;
+	
+	background-color: #1e1e1e;
+	border: 1px solid #ff4d4f;
+	box-shadow: 0 0 15px 5px rgba(100, 30, 30, 0.6);
+	border-radius: 10px;
+	color: white;
+	font-weight: bold;
+	font-size: 0.9rem;
+	text-align: center;
+	z-index: 100;
+	padding: 10px 0;
+}
+.panelLabel {
+	padding-bottom: 15px;
+	font-size: 1rem;
+}
+.floatingPanel a {
+	display: block;
+	margin-bottom: 0.5rem; /* Space between icons */
+	text-align: center;
+}
+.floatingPanel img {
+	width: 60px; /* Slightly bigger */
+	height: 60px;
+	object-fit: contain;
+	filter: drop-shadow(0 0 3px rgba(0,0,0,0.6));
+	transition: transform 0.2s ease;
+	cursor: pointer;
+}
+.floatingPanel img:hover {
+	transform: scale(1.25);
+}
+
+/*  ================
+	Project Info Box
+	================ */
+.infoContainer {
+	background-color: #454545;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	padding: 1rem;
+	border-radius: 8px;
+	margin-top: 0 1rem;
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	justify-content: center;
+}
+.infoGroup {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding: 0 2%;
+}
+.infoItem {
+	display: flex;
+	align-items: center;
+}
+.icons {
+	width: 35px;
+	height: 35px;
+	margin-bottom: 2px;
+	flex-shrink: 0;
+}
+.infoItem p {
+	white-space: nowrap;
+	margin: 0;
+	font-size: 1.0rem;
+	padding-bottom: 4px;
+}
+
 /*  ============ 
 	Text Section 
 	============ */
@@ -168,48 +215,48 @@ body {
 	Game Video Demo 
 	=============== */
 .videoWindow {
-  background-color: #1e1e1e;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  margin: auto;
+	background-color: #1e1e1e;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+	width: 100%;
+	margin: auto;
 }
 .videoHeader {
-  background-color: #252525;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
+	background-color: #252525;
+	padding: 0.75rem 1rem;
+	font-size: 1rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
 }
 .ToggleBtn {
-  background: none;
-  border: none;
-  color: #9a4dff;
-  font-size: 1rem;
-  cursor: pointer;
+	background: none;
+	border: none;
+	color: #9a4dff;
+	font-size: 1rem;
+	cursor: pointer;
 }
 .videoContent {
-  max-height: 0;
-  padding: 0 1rem;
-  overflow: hidden;
-  transition: max-height 0.6s ease, padding 0.6s ease;
+	max-height: 0;
+	padding: 0 1rem;
+	overflow: hidden;
+	transition: max-height 0.6s ease, padding 0.6s ease;
 }
 .videoContent.expanded {
-  max-height: 1000px;
-  padding: 1rem;
+	max-height: 1000px;
+	padding: 1rem;
 }
 .videoWrapper {
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
+	width: 100%;
+	max-width: 800px;
+	margin: auto;
 }
 video {
-  width: 100%;
-  border-radius: 10px;
+	width: 100%;
+	border-radius: 10px;
 }
 
 /*  ====================
@@ -265,6 +312,18 @@ video {
 /*  ==================== 
 	Responsive Portfolio 
 	==================== */
+@media (max-width: 900px) {
+	.floatingPanel {
+		position: static;
+    	width: 100%;
+    	margin-left: 0;
+    	margin-top: 1rem;
+	}
+	.pageWrapper {
+    	max-width: 100%;
+		padding: 0 1rem;
+	}
+}
 @media screen and (max-width: 800px) {
 	.mainBodyContent {
 		padding: 0 0;
