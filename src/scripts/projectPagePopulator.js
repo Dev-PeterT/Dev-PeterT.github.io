@@ -79,23 +79,26 @@ document.addEventListener('DOMContentLoaded', () => {
       // Recap
       document.getElementById('recapContext').textContent = project.Project_RecapContext;
 
-      // === Platform Icons for Download Section ===
-      const platformContainer = document.getElementById('platformIcons');
-      if (platformContainer && project.Project_Availability?.length > 0) {
-        project.Project_Availability.forEach(platform => {
-          const link = document.createElement('a');
-          link.href = platform.Link;
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
+      // Platform Icons for Download Section 
+      const containers = ['platformIconsDesktop', 'platformIconsMobile'];
+      containers.forEach(id => {
+        const container = document.getElementById(id);
+        if (container && project.Project_Availability?.length > 0) {
+          project.Project_Availability.forEach(platform => {
+            const link = document.createElement('a');
+            link.href = platform.Link;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
 
-          const img = document.createElement('img');
-          img.src = `/public/images/Logos/${platform.Platform}.png`;
-          img.alt = platform.Platform;
+            const img = document.createElement('img');
+            img.src = `/public/images/Logos/${platform.Platform}.png`;
+            img.alt = platform.Platform;
 
-          link.appendChild(img);
-          platformContainer.appendChild(link);
-        });
-      }
+            link.appendChild(img);
+            container.appendChild(link);
+          });
+        }
+      });
     })
     .catch(error => console.error('Error loading project details:', error));
 });

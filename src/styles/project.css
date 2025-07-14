@@ -148,10 +148,9 @@ body {
 	text-align: center;
 }
 .floatingPanel img {
-	width: 60px; /* Slightly bigger */
+	width: 60px;
 	height: 60px;
 	object-fit: contain;
-	filter: drop-shadow(0 0 3px rgba(0,0,0,0.6));
 	transition: transform 0.2s ease;
 	cursor: pointer;
 }
@@ -299,10 +298,12 @@ video {
 	padding: 1rem;
 }
 
-
 /*  ============== 
 	Footer Section 
 	============== */
+.mobilePanel {
+	display: none;
+}
 .footer {
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -314,19 +315,30 @@ video {
 	==================== */
 @media (max-width: 900px) {
 	.floatingPanel {
-		position: static;
-    	width: 100%;
-    	margin-left: 0;
-    	margin-top: 1rem;
+		display: none;
 	}
-	.pageWrapper {
-    	max-width: 100%;
-		padding: 0 1rem;
+	.mobilePanel {
+		display: block;
+		width: 90%;
+		padding: 15px;
+		margin: 0 auto;
+		background-color: #1e1e1e;
+		border: 1px solid #ff4d4f;
+		box-shadow: 0 0 15px 5px rgba(100, 30, 30, 0.6);
+		border-radius: 10px;
 	}
-}
-@media screen and (max-width: 800px) {
+	.mobilePanel img {
+		width: 60px;
+		height: 60px;
+		padding: 10px;
+		object-fit: contain;
+	}
+
 	.mainBodyContent {
-		padding: 0 0;
+		width: 100%;
+		max-width: none;
+		margin: 0;
+		left: 0;
 	}
 	.projectInfoContainer {
 		flex-direction: column;

@@ -10,10 +10,6 @@
       {
         "Platform": "Xbox",
         "Link": "https://example.com/android"
-      },
-      {
-        "Platform": "Steam",
-        "Link": "https://example.com/windows"
       }
     ],
 
