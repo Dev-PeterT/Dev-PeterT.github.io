@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('statusDetail').textContent = project.Project_Status;
 
       // Concept & Overview
-      document.getElementById('projectContext').textContent = project.Project_ProjectContext;
+      document.getElementById('projectContext').innerHTML = project.Project_ProjectContext;
 
       // Prototype section
-      document.getElementById('prototypeContext').textContent = project.Project_PrototypeContext;
+      document.getElementById('prototypeContext').innerHTML = project.Project_PrototypeContext;
       const prototypeVideo = document.querySelectorAll('video')[0];
       if (prototypeVideo && project.Project_PrototypeVideoPath) {
         prototypeVideo.querySelector('source').src = project.Project_PrototypeVideoPath;
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Final showcase section
-      document.getElementById('finalShowcaseContext').textContent = project.Project_FinalContext;
+      document.getElementById('finalShowcaseContext').innerHTML = project.Project_FinalContext;
       const finalVideo = document.querySelectorAll('video')[1];
       if (finalVideo && project.Project_FinalVideoPath) {
         finalVideo.querySelector('source').src = project.Project_FinalVideoPath;
@@ -72,12 +72,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
       // Technical context
+      const technicalContext = document.getElementById('technicalCodeContext');
       if (document.getElementById('technicalCodeContext') && project.Project_SuperClass) {
-        document.getElementById('technicalCodeContext').textContent = project.Project_SuperClass;
+        document.getElementById('technicalCodeContext').innerHTML = project.Project_SuperClass;
+      
+        const linkContainer = document.getElementById('superclassLinkContainer');
+        if (linkContainer && project.Project_CodeLink) {
+          const link = document.createElement('a');
+          link.href = project.Project_CodeLink;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.className = 'superclassLink'; // For styling
+          link.textContent = 'View Full Source on GitHub';
+
+          linkContainer.appendChild(link);
+        }
       }
 
       // Recap
-      document.getElementById('recapContext').textContent = project.Project_RecapContext;
+      document.getElementById('recapContext').innerHTML = project.Project_RecapContext;
 
       // Platform Icons for Download Section 
       const containers = ['platformIconsDesktop', 'platformIconsMobile'];

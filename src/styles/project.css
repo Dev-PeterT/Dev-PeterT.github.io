@@ -209,6 +209,18 @@ body {
 	flex-direction: column;
 	justify-content: flex-start;
 }
+.superclassLink {
+	display: inline-block;
+	margin-top: 12px;
+	font-weight: bold;
+	color: #4a90e2;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+.superclassLink:hover {
+	color: #2d6cdf;
+	text-decoration: underline;
+}
 
 /*  ===============
 	Game Video Demo 
