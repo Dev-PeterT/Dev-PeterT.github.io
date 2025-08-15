@@ -36,18 +36,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Prototype section
       document.getElementById('prototypeContext').innerHTML = project.Project_PrototypeContext;
-      const prototypeVideo = document.querySelectorAll('video')[0];
-      if (prototypeVideo && project.Project_PrototypeVideoPath) {
-        prototypeVideo.querySelector('source').src = project.Project_PrototypeVideoPath;
-        prototypeVideo.load();
+      const videoWrapper = document.querySelector('.videoWrapper');
+      const videoElement = videoWrapper.querySelector('video');
+
+      if (project.Project_PrototypeVideoPath) {
+        const path = project.Project_PrototypeVideoPath;
+
+        // Detect YouTube links
+        const youtubeMatch = path.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/);
+
+        if (youtubeMatch) {
+          // It's a YouTube link → replace <video> with <iframe>
+          const videoId = youtubeMatch[1];
+          const iframe = document.createElement('iframe');
+          iframe.width = "100%";
+          iframe.height = "100%";
+          iframe.src = `https://www.youtube.com/embed/${videoId}`;
+          iframe.title = "YouTube video player";
+          iframe.frameBorder = "0";
+          iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+          iframe.allowFullscreen = true;
+
+          // Hide the <video> and append iframe
+          videoElement.style.display = "none";
+          videoWrapper.appendChild(iframe);
+
+        } else {
+          // It's a direct video file → use <video>
+          videoElement.style.display = "block";
+          videoElement.querySelector('source').src = path;
+          videoElement.load();
+        }
       }
 
       // Final showcase section
       document.getElementById('finalShowcaseContext').innerHTML = project.Project_FinalContext;
-      const finalVideo = document.querySelectorAll('video')[1];
+      const finalVideoWrapper = document.querySelectorAll('.videoWrapper')[1]; // assuming the wrapper matches your HTML structure
+      const finalVideo = finalVideoWrapper.querySelector('video');
+
       if (finalVideo && project.Project_FinalVideoPath) {
-        finalVideo.querySelector('source').src = project.Project_FinalVideoPath;
-        finalVideo.load();
+        const path = project.Project_FinalVideoPath;
+
+        // Detect YouTube links
+        const youtubeMatch = path.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/);
+
+        if (youtubeMatch) {
+          // It's a YouTube link → create an iframe
+          const videoId = youtubeMatch[1];
+          const iframe = document.createElement('iframe');
+          iframe.width = "100%";
+          iframe.height = "500px"; // adjust height as needed
+          iframe.src = `https://www.youtube.com/embed/${videoId}`;
+          iframe.title = "YouTube video player";
+          iframe.frameBorder = "0";
+          iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+          iframe.allowFullscreen = true;
+
+          // Hide the <video> and append iframe
+          finalVideo.style.display = "none";
+          finalVideoWrapper.appendChild(iframe);
+
+        } else {
+          // It's a direct video file → use <video>
+          finalVideo.style.display = "block";
+          finalVideo.querySelector('source').src = path;
+          finalVideo.load();
+        }
       }
 
       // Superclass code block
