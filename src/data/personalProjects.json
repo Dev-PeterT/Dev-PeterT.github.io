@@ -16,12 +16,12 @@
     "Project_Role": "Sole Developer",
     "Project_TeamSize": "1",
 
-    "Project_DevelopmentTime": "TBD",
+    "Project_DevelopmentTime": "+8 hours",
     "Project_Status": "In Development",
     
     "Project_Engine": "Unity",
 
-    "Project_ProjectContext": "TBD",
+    "Project_ProjectContext": "Currently in early prototyping — core mechanics established, overall theme and setting in progress.",
 
     "Project_PrototypeContext": "I developed this Black Hole Twin Control prototype in Unity as a fast-paced survival game where the player controls two mirrored balls under constant gravitational pull. Designed for modularity and scalability, it features a central black hole with spherical gravity, side-specific homing missiles, and mirrored drag-and-release controls.<br><br>Built with a focus on rapid prototyping and efficient time management, the project demonstrates my ability to prioritize core gameplay, deliver a minimum viable product quickly, and structure systems to support future expansion.<br><br>Working on this prototype highlighted the value of modular, reusable systems and inspired me to develop multiple <b>sub-projects</b> focused on super-class scripts. This approach led to the creation of flexible, scalable, and extensible systems, including my <b>GravityManipulator</b> script.",
     "Project_PrototypeVideoPath": "https://youtu.be/ZOdLqh4aWlg",
@@ -30,9 +30,9 @@
     "Project_CodeLink": "https://github.com/Dev-PeterT/Game-Dev-Tool-Kits/tree/main/Game%20Mechanics/Gravity%20Manipulator",
     "Project_CodePath": "https://raw.githubusercontent.com/Dev-PeterT/Game-Dev-Tool-Kits/ed30a7adfc94ce996fb2a6be1abc29d02150078b/Game%20Mechanics/Gravity%20Manipulator/GravityManipulator.cs",
 
-    "Project_FinalContext": "TBD",
+    "Project_FinalContext": "Gameplay video and downloadable demo will be available upon final release",
     "Project_FinalVideoPath": "",
 
-    "Project_RecapContext": "TBD"
+    "Project_RecapContext": "Recap will cover development takeaways, optimizations, and future improvements."
   }
 ]
