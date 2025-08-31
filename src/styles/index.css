@@ -130,7 +130,7 @@ img.profile {
 	border: 4px solid #0066ff;
 	box-shadow: 0 0 10px rgba(0, 204, 255, 0.6);
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1080px) {
 	.splashBanner {
 		height: 40vh; /* Adjust for smaller devices */
 	}
