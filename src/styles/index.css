@@ -51,6 +51,7 @@ body {
 	display: flex;
 	color: #0066ff;
 	font-size: 50px;
+	padding-top: 40px;
 	padding-bottom: 60px;
 	align-items: center;
 	justify-content: center;
@@ -103,7 +104,7 @@ body {
 	==================== */
 .introudctionSction {
 	padding-top: 100px;
-	padding-bottom: 300px;
+	padding-bottom: 200px;
 }
 .aboutContent {
 	gap: 50px;

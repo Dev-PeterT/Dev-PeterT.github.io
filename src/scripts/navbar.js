@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // ======== Navigation Slide Animation ========
   const navbar = document.getElementById("navbar");
-  const navItems = document.querySelectorAll(".rightNavItem");
 
    // Remove classes in case they're left over (reset state)
   navbar.classList.remove("nav-animate-in", "nav-animate-out");
@@ -74,30 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
-  // ======== Section Highlighting with IntersectionObserver ========
-  const sections = document.querySelectorAll("div[id]");
-  const navLinks = document.querySelectorAll(".navItems li a");
-
-  const observer = new IntersectionObserver(
-    entries => {
-      let visibleSections = entries.filter(entry => entry.isIntersecting);
-      if (visibleSections.length === 0) return;
-
-      visibleSections.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-      const id = visibleSections[0].target.getAttribute("id");
-
-      navLinks.forEach(link => link.classList.remove("active"));
-      const activeLink = document.querySelector(`.navItems li a[href="#${id}"]`);
-      if (activeLink) activeLink.classList.add("active");
-    },
-    {
-      threshold: 0.4,
-      rootMargin: "-20% 0px -50% 0px", // TOP | RIGHT | BOTTOM | LEFT
-    }
-  );
-
-  sections.forEach(section => observer.observe(section));
 
   // ======== Typing Text Effect with State Persistence ========
   const roles = ["Game Developer", "Software Developer"];
