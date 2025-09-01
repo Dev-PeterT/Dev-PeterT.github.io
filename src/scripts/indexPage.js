@@ -44,7 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!targetContainer) return; // Skip if no matching section
 
         const a = document.createElement('a');
-        a.href = `/src/pages/gameProject.html?id=${project.Project_ID}`;
+
+        // Turn Project_Title into a URL-friendly slug
+        const slug = project.Project_Title
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/(^-|-$)+/g, "");
+
+        a.href = `/src/pages/projectPage.html?title=${encodeURIComponent(slug)}`;
         a.className = 'projectContainer';
         a.innerHTML = `
           <div class="projectVideo">

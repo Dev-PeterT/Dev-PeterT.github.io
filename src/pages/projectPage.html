@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Project Title</title>
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			
+		<link rel="StyleSheet" href="../styles/navbar.css">
+        <link rel="StyleSheet" href="../styles/project.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css" />
+	</head>
+	
+	<body>
+		<!-- Navigation Bar -->
+		<nav id="navbar">
+			<a href="/index.html" class="brand">Peter Tran <span style="color: #ff4d4f;">|</span> <span id="typingText"></span></a>
+
+			<!-- Hamburger Icon -->
+			<div class="hamburger" onclick="ToggleMenu()">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+
+			<!-- Navigation Items -->
+			<ul class="navItems" id="navItems">
+				<li class="rightNavItem"><a href="/index.html">Go Back <span>&gt;</span></a></li>
+			</ul>
+		</nav>
+		<script src="../scripts/navbar.js"></script>
+
+		<div style="height: 100px;"></div>
+
+		<div class="pageContent">
+			<!-- Footer Section-->
+			<div class="footer">
+				<p>Copyright &copy; by Peter Tran | All images, logos are used with permission.</p>
+			</div>
+		</div>
+		
+		<script>hljs.highlightAll();</script>
+		<script src="../scripts/projectPage.js"></script>
+		<script src="../scripts/pageAnimation.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/csharp.min.js"></script>
+</body>
+</html>
