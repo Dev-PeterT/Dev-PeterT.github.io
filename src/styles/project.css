@@ -20,23 +20,11 @@ body {
 /*  =================
 	Main Body Content
 	================= */
-.contentWrapper {
-	position: relative;
-	max-width: 1300px;
-	margin: 0 auto;
-	padding: 0 1rem;
-	display: flex;
-	align-items: flex-start;
-	gap: 20px;  
+.projectContent {
+	padding-left: 20%;
+	padding-right: 20%;
 }
-.mainBodyContent {
-	flex: 1; 
-	max-width: 900px;
-	margin: 0 auto;
-	position: relative; 
 
-	left: calc((150px + 20px) / 2);
-}
 
 /*  ======================
 	Page Content Animation
@@ -53,51 +41,6 @@ body {
 	opacity: 0;
 }
 
-
-
-/*  ==========
-	Video Demo
-	========== */
-.videoWrapper {
-	margin: 0 auto;
-	position: relative;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-.videoDemo {
-	width: 100%;
-	height: auto;
-	display: block;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-.projectTitle {
-	bottom: 0;
-	width: 100%;
-	position: absolute;
-	color: #0066ff;
-
-	gap: 1.5rem;
-	font-size: 1.5rem;
-	font-weight: bold;
-	padding: 10px 0px;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	background: rgba(0, 0, 0, 0.6);
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-.projectTitle hr {
-	flex: 1;
-	border: none;
-	height: 2px;
-	border-radius: 10px;
-	background-color: #0066ff;
-}
-
 /*  ==================
 	Divider and Header
 	================== */
@@ -108,6 +51,7 @@ body {
 	color: #0066ff;
 	font-size: 27px;
 	padding-bottom: 10px;
+	justify-content: flex-end;
 	justify-content: flex-start;
 }
 .divider hr {
@@ -116,199 +60,6 @@ body {
 	height: 2px;
 	border-radius: 10px;
 	background-color: #0066ff;
-}
-
-/*  ================
-	Project Info Box
-	================ */
-.floatingPanel {
-	position: sticky;
-	top: 150px;
-	left: calc(50% + 450px + 20px);
-	width: 150px;
-	
-	background-color: #1e1e1e;
-	border: 1px solid #ff4d4f;
-	box-shadow: 0 0 15px 5px rgba(100, 30, 30, 0.6);
-	border-radius: 10px;
-	color: white;
-	font-weight: bold;
-	font-size: 0.9rem;
-	text-align: center;
-	z-index: 100;
-	padding: 10px 0;
-}
-.panelLabel {
-	padding-bottom: 15px;
-	font-size: 1rem;
-}
-.floatingPanel a {
-	display: block;
-	margin-bottom: 0.5rem; /* Space between icons */
-	text-align: center;
-}
-.floatingPanel img {
-	width: 60px;
-	height: 60px;
-	object-fit: contain;
-	transition: transform 0.2s ease;
-	cursor: pointer;
-}
-.floatingPanel img:hover {
-	transform: scale(1.25);
-}
-
-/*  ================
-	Project Info Box
-	================ */
-.infoContainer {
-	background-color: #454545;
-	box-shadow: 0 0 10px rgba(0,0,0,0.3);
-	padding: 1rem;
-	border-radius: 8px;
-	margin-top: 0 1rem;
-	width: 100%;
-	box-sizing: border-box;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-	justify-content: center;
-}
-.infoGroup {
-	display: flex;
-	flex-direction: column;
-	flex: 1;
-	padding: 0 2%;
-}
-.infoItem {
-	display: flex;
-	align-items: center;
-}
-.icons {
-	width: 35px;
-	height: 35px;
-	margin-bottom: 2px;
-	flex-shrink: 0;
-}
-.infoItem p {
-	white-space: nowrap;
-	margin: 0;
-	font-size: 1.0rem;
-	padding-bottom: 4px;
-}
-
-/*  ============ 
-	Text Section 
-	============ */
-.projectDetails {
-	padding-top: 20px;
-	padding-bottom: 20px;
-
-	line-height: 1.5em;
-	text-align: justify;
-	flex-direction: column;
-	justify-content: flex-start;
-}
-.superclassLink {
-	display: inline-block;
-	margin-top: 12px;
-	font-weight: bold;
-	color: #4a90e2;
-	text-decoration: none;
-	transition: color 0.2s ease;
-}
-.superclassLink:hover {
-	color: #2d6cdf;
-	text-decoration: underline;
-}
-
-/*  ===============
-	Game Video Demo 
-	=============== */
-.videoWindow {
-	background-color: #1e1e1e;
-	border-radius: 10px;
-	overflow: hidden;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-	width: 100%;
-	margin: auto;
-}
-.videoHeader {
-	background-color: #252525;
-	padding: 0.75rem 1rem;
-	font-size: 1rem;
-	font-weight: bold;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	cursor: pointer;
-}
-.ToggleBtn {
-	background: none;
-	border: none;
-	color: #9a4dff;
-	font-size: 1rem;
-	cursor: pointer;
-}
-.videoContent {
-	max-height: 0;
-	padding: 0 1rem;
-	overflow: hidden;
-	transition: max-height 0.6s ease, padding 0.6s ease;
-}
-.videoContent.expanded {
-	max-height: 1000px;
-	padding: 1rem;
-}
-.videoWrapper {
-	width: 100%;
-	max-width: 800px;
-	aspect-ratio: 16/9;
-	margin: auto;
-}
-video {
-	width: 100%;
-	border-radius: 10px;
-}
-
-/*  ====================
-	Super Class Showcase 
-	==================== */
-.codeWindow {
-	background-color: #1e1e1e;
-	border-radius: 10px;
-	overflow: hidden;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-	width: 100%;
-	margin: auto;
-}
-.codeHeader {
-	background-color: #252525;
-	padding: 0.75rem 1rem;
-	font-size: 1rem;
-	font-weight: bold;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	cursor: pointer;
-}
-.ToggleBtn {
-	background: none;
-	border: none;
-	color: #9a4dff;
-	font-size: 1rem;
-	cursor: pointer;
-}
-.codeContent {
-	max-height: 0;
-	overflow: hidden;
-	padding: 0 1rem;
-	transition: max-height 0.6s ease, padding 0.6s ease;;
-}
-.codeContent.expanded {
-	max-height: 1000px;
-	overflow: auto;
-	padding: 1rem;
 }
 
 /*  ============== 
@@ -327,37 +78,10 @@ video {
 	Responsive Portfolio 
 	==================== */
 @media (max-width: 1080px) {
-	.floatingPanel {
-		display: none;
-	}
-	.mobilePanel {
-		display: block;
-		width: 90%;
-		padding: 15px;
-		margin: 0 auto;
-		background-color: #1e1e1e;
-		border: 1px solid #ff4d4f;
-		box-shadow: 0 0 15px 5px rgba(100, 30, 30, 0.6);
-		border-radius: 10px;
-	}
-	.mobilePanel img {
-		width: 60px;
-		height: 60px;
-		padding: 10px;
-		object-fit: contain;
-	}
-
 	.mainBodyContent {
 		width: 100%;
 		max-width: none;
 		margin: 0;
 		left: 0;
-	}
-	.projectInfoContainer {
-		flex-direction: column;
-		gap: 1rem;
-	}
-	.projectInfoBox {
-		max-width: 100%;
 	}
 }
