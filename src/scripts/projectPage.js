@@ -31,37 +31,86 @@ document.addEventListener("DOMContentLoaded", () => {
       // Update the <title>
       document.title = project.Project_Title;
 
-      // Example: fill project details into the page
-      const container = document.getElementById("projectDetails");
-      if (container) {
-        container.innerHTML = `
-          <h1>${project.Project_Title}</h1>
-          <p>${project.Project_Pitch || ""}</p>
-        `;
-      }
-
-      // Populate dynamic sections using Project_Sections
+      /* 
+        
+      */
+     /*===============================================
+       Populate dynamic sections using Project_Sections
+       =============================================== */
       const contentContainer = document.getElementById("projectContent");
-
       if (contentContainer && Array.isArray(project.Project_Sections)) {
         project.Project_Sections.forEach(section => {
-          // Create the section title block
-          const divider = document.createElement("div");
-          divider.classList.add("divider", "divider");
-          divider.innerHTML = `
+          // Create wrapper
+          const sectionContent = document.createElement("div");
+          sectionContent.classList.add("sectionContent");
+
+          /*===============================================
+             Create the section title block
+            =============================================== */
+          const sectionDivider = document.createElement("div");
+          sectionDivider.classList.add("divider");
+          sectionDivider.innerHTML = `
             <span>${section.Section_Title}</span><hr>
           `;
 
-          // Create the section context content (paragraph)
-          const context = document.createElement("p");
-          context.textContent = section.Section_Context || "";
+          /*===============================================
+             Create the paragraph for context text
+            =============================================== */
+          const contextPara = document.createElement("p");
+          contextPara.textContent = section.Section_Context || "";
 
-          // Append both to the container
-          contentContainer.appendChild(divider);
-          contentContainer.appendChild(context);
+          // Append divider and paragraph into sectionContent wrapper
+          sectionContent.appendChild(sectionDivider);
+          sectionContent.appendChild(contextPara);
+
+          /*===============================================
+             If "Technical_Example" exists and is not empty
+            =============================================== */
+          if ("Technical_Example" in section && section.Technical_Example?.trim()) {
+            const codeTerminal = document.createElement("div");
+            codeTerminal.classList.add("codeTerminal");
+
+            // Code header
+            const codeHeader = document.createElement("div");
+            codeHeader.classList.add("codeHeader");
+            codeHeader.setAttribute("onclick", "toggleCode()");
+            codeHeader.innerHTML = `
+              Superclass Spotlight
+              <button class="ToggleBtn" id="toggleBtn">Show Code ▼</button>
+            `;
+
+            // Code content
+            const codeContent = document.createElement("div");
+            codeContent.classList.add("codeContent");
+            codeContent.id = "codeContent";
+            codeContent.innerHTML = `
+              <pre><code id="codeBlock" class="language-csharp">${section.Technical_Example}</code></pre>
+            `;
+
+            // Append header + content into codeTerminal
+            codeTerminal.appendChild(codeHeader);
+            codeTerminal.appendChild(codeContent);
+
+            // Add codeTerminal into sectionContent
+            sectionContent.appendChild(codeTerminal);
+          }
+
+          // Finally, append wrapper to the container
+          contentContainer.appendChild(sectionContent);
         });
       }
 
     })
     .catch(err => console.error("Error loading project:", err));
 });
+
+// Toggle button to show/hide code
+let codeLoaded = false;
+function toggleCode() {
+  const codeContent = document.getElementById("codeContent");
+  const toggleBtn = document.getElementById("toggleBtn");
+  const codeBlock = document.getElementById("codeBlock");
+  const isExpanded = codeContent.classList.toggle("expanded");
+
+  toggleBtn.textContent = isExpanded ? "Hide Code ▲" : "Show Code ▼";
+}

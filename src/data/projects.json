@@ -18,8 +18,13 @@
                 "Section_Context": "This is a project that filters noise from user input in real time."
             },
             {
+                "Section_Title": "Technical Highlight",
+                "Section_Context": "This is my technical highlight.",
+                "Technical_Example": "Testing"
+            },
+            {
                 "Section_Title": "Recap",
-                "Section_Context": "The project was a solo development and used JS for real-time filtering."
+                "Section_Context": "The project was a solo development and used JS for real-time filtering. The project was a solo development and used JS for real-time filtering. The project was a solo development and used JS for real-time filtering."
             }
         ],
 
