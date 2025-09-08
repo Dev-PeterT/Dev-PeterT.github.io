@@ -21,8 +21,8 @@ body {
 	Main Body Content
 	================= */
 .projectContent {
-	padding-left: 20%;
-	padding-right: 20%;
+	padding-left: 25%;
+	padding-right: 25%;
 }
 
 
@@ -105,13 +105,22 @@ body {
 .codeContent {
 	max-height: 0;
 	overflow: hidden;
-	padding: 0 1rem;
+	word-wrap: normal; 
 	transition: max-height 0.6s ease, padding 0.6s ease;;
 }
 .codeContent.expanded {
-	max-height: 1000px;
+	max-height: 600px;
 	overflow: auto;
-	padding: 1rem;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+.codeContent pre {
+	white-space: pre;
+	margin: 0;
+	padding: 1rem 0;
+	min-width: max-content;
+	display: block;
+	font-family: monospace;
 }
 
 /*  ============== 

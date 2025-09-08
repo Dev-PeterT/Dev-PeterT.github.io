@@ -15,12 +15,13 @@
         "Project_Sections": [
             {
                 "Section_Title": "Introduction",
-                "Section_Context": "This is a project that filters noise from user input in real time."
+                "Section_Context": "This is a project that filters noise from user input in real time." 
             },
             {
                 "Section_Title": "Technical Highlight",
                 "Section_Context": "This is my technical highlight.",
-                "Technical_Example": "Testing"
+                "Technical_Language": "C#",
+                "Technical_Example": "https://raw.githubusercontent.com/Dev-PeterT/Code-Showcase/refs/heads/main/Game%20Development/Unity/Guided%20Projectile/GuidedProjectile.cs"
             },
             {
                 "Section_Title": "Recap",

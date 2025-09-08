@@ -83,16 +83,44 @@ document.addEventListener("DOMContentLoaded", () => {
             const codeContent = document.createElement("div");
             codeContent.classList.add("codeContent");
             codeContent.id = "codeContent";
-            codeContent.innerHTML = `
-              <pre><code id="codeBlock" class="language-csharp">${section.Technical_Example}</code></pre>
-            `;
-
-            // Append header + content into codeTerminal
             codeTerminal.appendChild(codeHeader);
             codeTerminal.appendChild(codeContent);
 
             // Add codeTerminal into sectionContent
             sectionContent.appendChild(codeTerminal);
+
+             // Determine the Highlight.js language class
+            let languageClass = "";
+            switch ((section.Technical_Language || "").toLowerCase()) {
+              case "c#":
+                languageClass = "language-csharp";
+                break;
+              case "c++":
+                languageClass = "language-cpp";
+                break;
+              case "python":
+                languageClass = "language-python";
+                break;
+              default:
+                languageClass = ""; // fallback: let Highlight.js try auto-detect
+            }
+
+            // Fetch the code from the link
+            fetch(section.Technical_Example)
+              .then((response) => {
+                if (!response.ok) throw new Error("Failed to fetch code");
+                return response.text();
+              })
+              .then((codeText) => {
+                codeContent.innerHTML = `
+                  <pre><code id="codeBlock" class="language-csharp">${codeText}</code></pre>
+                `;
+                // Initialize Highlight.js
+                hljs.highlightElement(codeContent.querySelector("code"));
+              })
+              .catch((err) => {
+                codeContent.innerHTML = `<p style="color:red;">Error loading code: ${err.message}</p>`;
+              });
           }
 
           // Finally, append wrapper to the container
@@ -113,4 +141,28 @@ function toggleCode() {
   const isExpanded = codeContent.classList.toggle("expanded");
 
   toggleBtn.textContent = isExpanded ? "Hide Code ▲" : "Show Code ▼";
+}
+
+/*============================================
+  Helper functions to get the code from a link
+  ============================================ */
+function isValidURL(str) {
+    try {
+        new URL(str);
+        return true;
+    } catch (_) {
+        return false;
+    }
+}
+function escapeHTML(str) {
+    return str.replace(/[&<>"']/g, function (match) {
+        const escape = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;',
+        };
+        return escape[match];
+    });
 }
