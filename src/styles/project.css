@@ -8,6 +8,7 @@ body {
 	margin: 0;
 	color: white;
 	hyphens: auto;
+	line-height: 1.5em;
 	text-align: center;
 	align-items: center;
 	word-spacing: 0.01em;
@@ -16,15 +17,6 @@ body {
 	background-color: #353535;
 	font-family: Verdana, sans-serif;
 }
-
-/*  =================
-	Main Body Content
-	================= */
-.projectContent {
-	padding-left: 25%;
-	padding-right: 25%;
-}
-
 
 /*  ======================
 	Page Content Animation
@@ -41,6 +33,52 @@ body {
 	opacity: 0;
 }
 
+/*  =================
+	Main Body Content
+	================= */
+.pageContent {
+	margin: 0 auto;
+	max-width: 1600px;
+}
+
+/*  ==============
+	Info Group Box
+	============== */
+.infoContainer {
+	background-color: #454545;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	padding: 1rem 1.25rem;
+	border-radius: 8px;
+	margin: 1rem 0;
+	width: 100%;
+
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem 2rem;
+
+	justify-content: center;
+}
+.infoGroup {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 200px;  
+	min-width: 180px;
+}
+.infoItem {
+	display: flex;
+	justify-content: center;
+}
+.icons {
+	width: 40px;
+	height: 40px;
+	margin-bottom: 2px;
+}
+.infoItem p {
+	font-size: 1.0rem;
+	padding-bottom: 6px;
+}
+
 /*  ==================
 	Divider and Header
 	================== */
@@ -49,7 +87,7 @@ body {
 	align-items: center;
 	gap: 1rem;
 	color: #0066ff;
-	font-size: 27px;
+	font-size: 40px;
 	padding-bottom: 10px;
 	justify-content: flex-end;
 	justify-content: flex-start;
@@ -57,7 +95,7 @@ body {
 .divider hr {
 	flex: 1;
 	border: none;
-	height: 2px;
+	height: 3px;
 	border-radius: 10px;
 	background-color: #0066ff;
 }
@@ -67,7 +105,7 @@ body {
 	============ */
 .sectionContent {
 	padding-top: 10px;
-	padding-bottom: 50px;
+	padding-bottom: 10px;
 	text-align: justify;
 }
 .sectionContent p {
@@ -136,10 +174,7 @@ body {
 	Responsive Portfolio 
 	==================== */
 @media (max-width: 1080px) {
-	.mainBodyContent {
-		width: 100%;
-		max-width: none;
-		margin: 0;
-		left: 0;
+	.pageContent {	
+		margin: 0 5%;
 	}
 }

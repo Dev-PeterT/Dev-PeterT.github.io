@@ -24,23 +24,23 @@ body {
 	Page Content Animation
 	====================== */
 .pageContent {
-  will-change: opacity;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+	will-change: opacity;
+	opacity: 0;
+	transition: opacity 0.5s ease;
 }
 .body-animate-in .pageContent {
-  opacity: 1;
+	opacity: 1;
 }
 .body-animate-out .pageContent {
-  opacity: 0;
+	opacity: 0;
 }
 
 /*  =================
 	Main Body Content
 	================= */
 .mainBodyContent {
-	padding-left: 20%;
-	padding-right: 20%;
+	margin: 0 auto;
+	max-width: 1600px;
 }
 
 /*  ==================
@@ -132,6 +132,9 @@ img.profile {
 	box-shadow: 0 0 10px rgba(0, 204, 255, 0.6);
 }
 @media screen and (max-width: 1080px) {
+	.mainBodyContent {
+		margin: 0 5%;
+	}
 	.splashBanner {
 		height: 40vh; /* Adjust for smaller devices */
 	}

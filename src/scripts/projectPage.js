@@ -31,9 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
       // Update the <title>
       document.title = project.Project_Title;
 
-      /* 
-        
-      */
+      // Populate DOM elements with data
+      document.getElementById("roleDetail").textContent = project.Development_Role;
+      document.getElementById("sizeDetail").textContent = project.Development_TeamSize;
+      document.getElementById("timeDetail").textContent = project.Development_Time;
+      document.getElementById("statusDetail").textContent = project.Development_Status;
+      document.getElementById("toolDetail").textContent = project.Development_Tools;
+      document.getElementById("languageDetail").textContent = project.Development_Language;
+
+
      /*===============================================
        Populate dynamic sections using Project_Sections
        =============================================== */
@@ -57,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
              Create the paragraph for context text
             =============================================== */
           const contextPara = document.createElement("p");
-          contextPara.textContent = section.Section_Context || "";
+          contextPara.innerHTML = section.Section_Context || "";
 
           // Append divider and paragraph into sectionContent wrapper
           sectionContent.appendChild(sectionDivider);
@@ -123,6 +129,17 @@ document.addEventListener("DOMContentLoaded", () => {
               });
           }
 
+          /*===========================================
+             If "Video_Example" exists and is not empty
+            =========================================== */
+          
+          
+          
+          /*===========================================
+             If "Photo_Example" exists and is not empty
+            =========================================== */
+
+          
           // Finally, append wrapper to the container
           contentContainer.appendChild(sectionContent);
         });

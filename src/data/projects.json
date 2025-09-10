@@ -1,32 +1,29 @@
 [
     {
         "Project_Title": "Excellent Filter",
-        "Project_Type": "Personal",
+        "Project_Type": "Professional",
         "Project_Category": "Software/Game",
 
         "Development_Role": "Sole Developer",
         "Development_TeamSize": "1",
 
-        "Development_Time": "",
-        "Development_Status": "",
+        "Development_Time": "16+ hours",
+        "Development_Status": "Under Development",
 
-        "Development_Tools": "",
+        "Development_Tools": "VS Code",
+        "Development_Language": "Python",
 
         "Project_Sections": [
             {
-                "Section_Title": "Introduction",
-                "Section_Context": "This is a project that filters noise from user input in real time." 
+                "Section_Title": "Concept",
+                "Section_Context": "<p>This project was developed to automate repetitive Excel data-processing tasks, originally done manually at work. It takes an Excel file as input, applies filtering and sorting rules defined in JSON configuration files, and outputs a clean, organized file.</p><p>Designed with modularity in mind, the program allows users to easily add, remove, or modify rules, making it adaptable to different datasets and evolving requirements. The goal was to create a flexible, reusable tool that streamlines workflows while reducing human error.</p>"
             },
             {
-                "Section_Title": "Technical Highlight",
-                "Section_Context": "This is my technical highlight.",
-                "Technical_Language": "C#",
-                "Technical_Example": "https://raw.githubusercontent.com/Dev-PeterT/Code-Showcase/refs/heads/main/Game%20Development/Unity/Guided%20Projectile/GuidedProjectile.cs"
-            },
-            {
-                "Section_Title": "Recap",
-                "Section_Context": "The project was a solo development and used JS for real-time filtering. The project was a solo development and used JS for real-time filtering. The project was a solo development and used JS for real-time filtering."
+                "Section_Title": "Prototype",
+                "Section_Context": "<p>The prototype was built over one week (16 hours) to demonstrate the program’s core functionality. It was structured in modules: loading Excel and JSON files, filtering unnecessary rows and columns, and applying separate filtering and sorting procedures.</p><p>User input allows selection of different configurations, and the program dynamically loops through any number of instructions to handle varying datasets. Throughout development, outputs were rigorously tested to match results previously achieved manually.</p><p>This modular and adaptable prototype laid the foundation for future improvements, including performance optimization and expanding configurable rules. The prototype currently runs in a terminal environment, focusing on core functionality and modular design. The next step is to develop a compiled version with a user-friendly interface to expand accessibility and usability.</p>",
+                "Video_Example": ""
             }
+            
         ],
 
         "Project_Accessibility": ""
